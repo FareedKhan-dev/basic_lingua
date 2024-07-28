@@ -1,27 +1,46 @@
 <!-- omit in toc -->
 # BasicLINGUA
+**Created By**: [Fareed Khan](https://www.linkedin.com/in/fareed-khan-dev/)
 
-[![Documentation](https://img.shields.io/badge/AI%20Powered%20Documentation-Link-yellow)](https://ai-powered-basiclingua-documentation.streamlit.app/) [![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)  [![GitHub](https://img.shields.io/badge/GitHub-Notebook-blue?logo=github)](https://github.com/FareedKhan-dev/basiclingua-LLM-Based-NLP/blob/V2/Tutorial/Guide.ipynb)  [![Python](https://img.shields.io/badge/Python-3.9%2B-green)](https://www.python.org/downloads/) [![Version](https://img.shields.io/badge/BasicLingua%20Version-2.0-green)]()
+[![Documentation](https://img.shields.io/badge/AI%20Powered%20Documentation-Link-yellow)](https://ai-powered-basiclingua-documentation.streamlit.app/) [![Backend Code](https://img.shields.io/badge/Backend%20Engineering%20Code-Link-yellow)](https://github.com/FareedKhan-dev/2024-AI-Challenge-Zevar/tree/main/backend-engineering)  [![License](https://img.shields.io/badge/License-MIT-yellow)](https://opensource.org/licenses/MIT)  [![GitHub](https://img.shields.io/badge/Getting%20Started%20Notebook-Link-green)](https://github.com/FareedKhan-dev/2024-AI-Challenge-Zevar/blob/main/Tutorial/Guide.ipynb)  [![Python](https://img.shields.io/badge/Python-3.9%2B-green)](https://www.python.org/downloads/) [![Version](https://img.shields.io/badge/BasicLingua%20Version-2.0-green)]()
 
 ![Basic-Lingua Logo](images/logo.png)
 
 Basiclingua is a LLM based Python library that provides functionalities for linguistic tasks such as pattern extractions, intent recognition and many others, (**Imagination is the limit**).
 
+<!-- omit in toc -->
+## Table of Content
+- [Why Building this Project?](#why-building-this-project)
+- [BasicLingua Architecture](#basiclingua-architecture)
+- [Evaluation Metrics](#evaluation-metrics)
+- [AI Powered / Manual Documentation](#ai-powered--manual-documentation)
+- [Tools and Technologies Used](#tools-and-technologies-used)
+- [Updates](#updates)
+- [Demo Video](#demo-video)
+- [File Structure](#file-structure)
+- [Installation / Update](#installation--update)
+- [Initialization](#initialization)
+- [Supported LLMs](#supported-llms)
+- [Usage](#usage)
+- [Features of the library](#features-of-the-library)
+- [Playground](#playground)
+- [Acknowledgements](#acknowledgements)
+
+
 ## Why Building this Project?
 
-The problem that I plan to tackle is the increasing complexity and difficulty of handling text data as its size and complexity increase. NLP libraries that offer solutions are either limited in their ability to solve the required problem or require a great deal of human intervention to handle text data. We have used Multiple Language Models (Both Open-Source and Closed Source), which have demonstrated promising results in dealing with text data, to address the complexity that no NLP library has yet solved. As a result, we will be able to handle text-related tasks with minimal human intervention. We have created a powerful NLP library capable of solving any type of human text-related task, producing accurate results.
+**Natural Language Processing (NLP)** has always been a challenging domain, requiring significant human effort and costs. Additionally, the data is becoming increasingly complex. By 2025, unstructured data, including vast amounts of text data, is expected to account for over 90% of the total data generated globally. Handling such data is expensive due to its ever-changing structure. However, recent advancements in AI, such as Large Language Models (LLMs), can process and understand text data more quickly and accurately than the human eye.
+
+Our proposed solution, **BasicLingua**, is an NLP library in Python built on top of LLMs like **LLaMA-3** and many others. It handles NLP tasks by processing only relevant text information, reducing costs, and providing efficient outputs similar to other text processing Python packages. BasicLingua is versatile and can be applied across various domains, from finance to healthcare, and any other field where text information is crucial. It offers endless possibilities and features, supported by AI-powered documentation. With the continuous growth of LLMs, such as LLaMA-3.1 and more recent powerful vision or text LLMs, the BasicLingua ecosystem has the potential to expand significantly.
 
 ## BasicLingua Architecture
 
 
 ![Basic-Lingua Architecture](images/architecture.png)
 
-
-The BasicLingua architecture takes a straightforward and efficient approach: a user inputs text and then selects a model of their choice, either open-source or closed-source. Next, they choose the feature that meets their needs, with each feature designed to be cost-effective to ensure full utilization at a minimal cost. The output can vary—it might be a dictionary, a list, or another format depending on the selected feature.
-
 One of the biggest challenges in building this architecture was ensuring the cost associated with using the features was minimal. To address this, we use effective `prompt engineering` techniques to optimize the performance of the models and reduce the cost of using the library.
 
-Here is one of our spellcheck feature that uses OpenAI model to correct spelling mistakes in text, the backend engineering is shown below:
+Here is one of our `spellcheck` feature that uses `OpenAI` model to correct spelling mistakes in text, the backend engineering is shown below:
 
 ![Prompt-Engineering-Guide](images/backend-prompt-engineering.png)
 
@@ -38,24 +57,31 @@ Our library has been tested on a wide range of text data, including clinical not
 | Documents | Wikipedia Articles | Wikipedia articles on various topics | Random 1000 articles | [Wikipedia](https://www.wikipedia.org/) |
 | General Text | AI generated text | Text generated by OpenAI and Gemini models | Random 5000 text samples | [OpenAI](https://platform.openai.com/), [Gemini](https://ai.google.dev/gemini-api/docs/models/gemini) |
 
-We evaluated the library for different features, such as entity extraction, text summarization and more, below are the results:
+We evaluated the library for various linguistic tasks, benchmarking it against OpenAI, Gemini, and AnyScale models. The evaluation metrics used are as follows: 
 
-| Task Name | Task Description | Evaluation Metric | OpenAI<br> (GPT-3.5) | Gemini<br> (Gemini-1.0) | AnyScale<br> (Llama-3-70b) |
-| --- | --- | --- | --- | --- | --- |
-| Entity Extraction | Extracting entities from text diseases, person names,  locations etc. | F1 Score | 0.85 | 0.61 | 0.76 |
-| Text Summarization | Summarizing long text into a shorter version | ROUGE Score | 0.78 | 0.68 | 0.72 |
-| Text Classification | Classifying text into predefined categories | Accuracy | 0.92 | 0.80 | 0.89 |
-| Text Sentiment Analysis | Analyzing the sentiment of text (positive, negative, neutral) | Accuracy | 0.88 | 0.75 | 0.82 |
-| Text Coreference Resolution | Resolving coreferences in text | F1 Score | 0.89 | 0.73 | 0.83 |
-| Text Intent Recognition | Recognizing the intent of text (e.g., booking a flight, ordering food) | Accuracy | 0.90 | 0.78 | 0.85 |
-| Text OCR | Extracting text from images and scanned documents | Accuracy | 0.85 | 0.68 | 0.78 |
-| Text Anomaly Detection | Detecting anomalies in text data | F1 Score | 0.80 | 0.65 | 0.72 |
-| Text Sense Disambiguation | Disambiguating word senses in text | Accuracy | 0.90 | 0.78 | 0.85 |
-| Text Spellcheck | Correcting spelling mistakes in text | Accuracy | 0.85 | 0.68 | 0.78 |
+| Task Name                    | Evaluation Metric | OpenAI (GPT-3.5) | Gemini (Gemini-1.0) | AnyScale (Llama-3-70b) |
+|-----------------------------|-------------------|------------------|--------------------|-----------------------|
+| Information Extraction       | Average F1 Score  | 0.85             | 0.64               | 0.77                  |
+| Analysis                     | Average Accuracy  | 0.90             | 0.74               | 0.81                  |
+| Summarization                | ROUGE Score       | 0.78             | 0.68               | 0.72                  |
+| Coreference & Disambiguation | Average F1 Score  | 0.89             | 0.73               | 0.84                  |
+| Pre-Processing                   | Average Accuracy  | 0.88             | 0.73               | 0.82                  |
 
-The evaluation metrics show that the library performs well across different tasks, with OpenAI achieving the highest scores in most tasks. However, Gemini and AnyScale also demonstrate strong performance, making them suitable for various text-related tasks. Apart from the evaluation metrics, we have also focused on the **cost-effectiveness** of the library, ensuring that users can access the features at a minimal cost.
 
-## AI Powered Documentation
+The evaluation metrics show that the library performs well across different tasks, with **OpenAI** achieving the highest scores in most tasks. We evaluated the library for various linguistic tasks, benchmarking it against OpenAI, Gemini, and AnyScale models. The evaluation metrics used are as follows: 
+
+| Task Name                    | Evaluation Metric | OpenAI (GPT-3.5) | Gemini (Gemini-1.0) | AnyScale (Llama-3-70b) |
+|-----------------------------|-------------------|------------------|--------------------|-----------------------|
+| Information Extraction       | Average F1 Score  | 0.85             | 0.64               | 0.77                  |
+| Analysis                     | Average Accuracy  | 0.90             | 0.74               | 0.81                  |
+| Summarization                | ROUGE Score       | 0.78             | 0.68               | 0.72                  |
+| Coreference & Disambiguation | Average F1 Score  | 0.89             | 0.73               | 0.84                  |
+| Pre-Processing                   | Average Accuracy  | 0.88             | 0.73               | 0.82                  |
+
+
+The evaluation metrics show that the library performs well across different tasks, with **OpenAI** achieving the highest scores in most tasks. However, **AnyScale's Llama-3-70b**, an open-source model, demonstrates strong performance, closely matching the accuracy of other closed-source models. This is particularly noteworthy given its cost-effectiveness and accessibility. Additionally, it is anticipated that the upcoming **Llama-3.1** will likely surpass the accuracy of the closed-source LLMs once it is integrated into version 3 of this library.
+
+## AI Powered / Manual Documentation
 
 ![AI-Powered-Documentation](images/ai-powered-documentation.png)
 
@@ -63,8 +89,20 @@ Given that our NLP library can handle a wide range of domain-related tasks, it i
 
 Given that our NLP library is based on LLMs, it is crucial to provide an **AI-powered documentation** for **BasicLingua**. Makes the library more efficient to use and understand. 
 
-
 AI Documentation Webapp is available at -  [![GitHub](https://img.shields.io/badge/AI%20Powered%20Documentation%20Link-blue?logo=Meta)](https://ai-powered-basiclingua-documentation.streamlit.app/)
+
+You can also access the manual documentation within your code editor which contains parameters details, return types and examples of each function and more.
+
+![AI-Powered-Documentation](images/manual-documentation.png)
+
+## Tools and Technologies Used
+
+- **Programming Language**: Python
+- **Libraries**: OpenAI, Google generative ai, AnyScale, Streamlit
+- **Deployment**: Streamlit Sharing, PyPi
+- **Version Control**: Git, GitHub
+- **Documentation**: AI-Powered Documentation
+- **IDE**: Jupyter Notebook, Visual Studio Code
 
 
 ## Updates
@@ -74,22 +112,34 @@ AI Documentation Webapp is available at -  [![GitHub](https://img.shields.io/bad
 - **`2024/1/10`** We have released the baby version of this library containing limited number of pre-processing features.
 
 
-<!-- omit in toc -->
-## Table of Content
-- [Why Building this Project?](#why-building-this-project)
-- [BasicLingua Architecture](#basiclingua-architecture)
-- [Evaluation Metrics](#evaluation-metrics)
-- [AI Powered Documentation](#ai-powered-documentation)
-- [Updates](#updates)
-- [Installation / Updation](#installation--updation)
-- [Initialization](#initialization)
-- [Supported LLMs](#supported-llms)
-- [Usage](#usage)
-- [Features of the library](#features-of-the-library)
-- [Playground](#playground)
-- [Acknowledgements](#acknowledgements)
+## Demo Video
 
-## Installation / Updation
+Project demo video showcasing some of the functionalities provided by the library.
+
+https://github.com/FareedKhan-dev/2024-AI-Challenge-Zevar/assets/63067900/ebc3ff6e-7a07-43e2-96b3-f02dd4473ed1
+
+
+
+## File Structure
+
+The project files are organized as follows:
+
+```bash
+├── Demo
+│   ├── demo_video.mp4    <-- Demo Video
+├── Document              <-- Containing the pdf of the project overview document
+├── Tutorial
+│   ├── Guide.ipynb       <-- Jupyter Notebook for the library guide
+├── backend-engineering
+│   ├── OpenAI.py         <-- OpenAI Backend Engineering
+│   ├── Gemini.py         <-- Gemini Backend Engineering
+│   ├── AnyScale.py       <-- AnyScale Backend Engineering (Open-Source LLMs)
+├── images                <-- Images used in the README
+├── LICENSE               <-- MIT License
+├── README.md             <-- Project README
+```
+
+## Installation / Update
 
 Before installing BasicLingua, ensure that you have Python installed on your system. BasicLingua tested on `Python 3.9` or greater. Earlier version may work but not guaranteed. To check your Python version, run the following command in your terminal:
 
@@ -99,7 +149,7 @@ python --version
 
 If you don't have Python installed or need to upgrade, visit the [official Python website](https://www.python.org/downloads/) to download and install the latest version.
 
-Once Python is set up, you can install BasicLingua using pip:
+Once Python is set up, you can install BasicLingua using `pip`:
 
 ```bash
 pip install basiclingua
@@ -134,13 +184,14 @@ Import All Models at Once
 from basiclingua import OpenAILingua, GeminiLingua, AnyScaleLingua
 ```
 
-Before using any model, you must set the API key for that specific platform. This is a mandatory step. Each model class has a constructor that takes the API key and optional additional parameters, such as model names.
+**Option 1** - Since this project is for AI Challenge 2024,you can contact us at [fareedhassankhan12@gmail.com](https://aichallenge2024.com/) to get the API keys for OpenAI, Gemini and AnyScale for testing purposes.
 
-**Gemini 1.0** Model is available for free within API limits, while AnyScale offer $10 free credit to get started.
-
+**Option 2** - You can create your own API keys from the respective platforms.
 * Get your OpenAI API Key from [OpenAI Platform](https://platform.openai.com/api-keys)
 * Get your Gemini api key from [Gemini Platform](https://aistudio.google.com/app/apikey)
 * Get anyscale api key from [AnyScale Platform](https://app.endpoints.anyscale.com/credentials)
+
+Before using any model, you must set the API key for that specific platform. This is a mandatory step. Each model class has a constructor that takes the API key and optional additional parameters, such as model names.
 
 **For Initializing OpenAI**
 ```python
@@ -166,7 +217,7 @@ gemini_model = GeminiLingua(
 ```
 Default models are `gemini-1.0-pro-latest` and `gemini-1.5-pro-latest` for text and vision respectively.
 
-**For Initializing AnyScale**
+**For Initializing AnyScale** (LLaMA-3, Mistral etc)
 
 ```python
 # Initializing AnyScale Model
@@ -221,7 +272,7 @@ user_input = """Patient John, last name: Doe; 45 yrs
 patterns = "ICD-10 Codes, Diseases, Medications, Allergies, Symptoms, Family History, Descriptions"
 
 # Using OpenAI to extract entities
-openai_entities = openai_model.extract_patterns(user_input, patterns=patterns)
+openai_entities = anyscale_model.extract_patterns(user_input, patterns=patterns)
 
 # Displaying the extracted entities
 print(openai_entities)
@@ -289,7 +340,7 @@ You can explore more by chatting with our [Documentation Chatbot](https://ai-pow
 
 ## Playground
 
-Since this library is available under the `MIT license`, you can use it in your projects. You can also contribute to the library by adding new functionalities or improving the existing ones. All the backend code is available in the **backend-engineering folder**.
+Since this library is available under the `MIT license`, you can use it in your projects. All the backend code is available in the **backend-engineering folder**.
 
 ##  Acknowledgements
 
